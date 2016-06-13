@@ -1,0 +1,25 @@
+{
+  "name": "interactive-womens-world-cup",
+  "version": "0.0.3",
+  "homepage": "git://github.com/cfenn/interactive-womens-wc.git",
+  "author": "Guardian Visuals",
+  "description": "Womens world cup football interactive",
+  "main": "src/boot.js",
+  "license": "Apache",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "almond": "0.3.0",
+    "curl": "0.8.12",
+    "pasteup-buttons": "~0.4.12",
+    "requirejs-plugins": "1.0.3",
+    "text": "2.0.10",
+    "reqwest": "~1.1.5",
+    "moment-timezone": "~0.4.0"
+  }
+}

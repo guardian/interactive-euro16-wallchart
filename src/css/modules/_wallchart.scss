@@ -1,0 +1,200 @@
+
+
+      .wwc16__chart-container{
+
+             position:relative;
+              width:100%;
+              max-width:1260px;
+              height: auto;
+              -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+
+              @include mq(tablet) {
+                  max-width: 700px;
+              }
+
+              @include mq(desktop) {
+                  max-width: 940px;
+              }
+
+              @include mq(1140px) {
+                  max-width: 1100px;
+              }
+
+              @include mq(wide) {
+                  max-width: 1260px;
+              }
+
+
+              .wwc16__chart-row{
+
+                    position:relative;
+                    max-width: 300px;
+                    width: 100%;
+                    float:left;
+                    margin: 0 auto;
+                    border-bottom: 1px dotted $neutral-6;
+                    padding-bottom:12px;
+
+                    display:                 -webkit-flex; /* Safari 
+                    display:                 flex; */
+                    -webkit-flex-wrap:       wrap;         /* Safari 6.1+ */
+                    flex-wrap:               wrap;
+                    -webkit-justify-content: center;       /* Safari 6.1+ */
+                    justify-content:         center;
+
+                        @include mq(480px) {
+                            max-width: 480px;
+                        }
+                       
+                        @include mq(620px) {
+                            max-width: 600px;
+                        }
+                       
+                        @include mq(tablet) {
+                            max-width: 740px;
+                        }
+
+                        @include mq(desktop) {
+                            max-width: 980px;
+                            padding-bottom:48px;
+                        }
+
+                        @include mq(1140px) {
+                            max-width: 980px;
+                            margin-left:160px;
+                        }
+
+                        @include mq(wide) {
+                          margin-left:240px;
+                            
+                        }
+                }
+
+                  .wwc16__last-16, .wwc16__qf, .wwc16__sf{
+                    position:relative;
+                    width:36px;
+                    padding : 6px 10px;
+                    height: auto;
+                    margin: 6px 2px;
+                    float:left;
+                    @include fs-data(2);
+                    text-align:center;
+                    background-color: rgba($news-main-2, 0.5);
+                    border-top: 2px solid $news-main-2;
+
+
+                       @include mq(mobileLandscape) {
+                            width:40px;
+                            margin: 6px 5px;
+                            @include fs-data(3);
+
+                            .wwc16__last-16:nth-child(2) {
+                              margin-left:0px;
+
+                            }
+                        }  
+
+                      @include mq(tablet) {
+                            width:60px;
+                            margin: 6px 5px;
+                            @include fs-data(4);
+                        }
+
+                        @include mq(desktop) {
+                            width:84px;
+                            margin: 6px 5px;
+                            @include fs-data(4);
+
+                        }
+
+                        @include mq(leftCol) {
+                            width:100px;
+                            margin: 6px 10px;
+                            @include fs-data(4);
+                        }
+
+                        @include mq(wide) {
+                            width:115px;
+                            margin: 6px 10px;                            
+                            @include fs-data(4); 
+
+                            
+                        }
+
+                  }  
+
+                  .wwc16__last-16{
+                          @include mq(leftCol) {
+                              width: 80px;
+                            }
+                    }
+
+                  .wwc16__third{
+                    position:relative;
+                    width:100%;
+                    max-width:252px;
+                    height: auto;
+                    margin: 48px auto 12px auto;
+                    padding : 12px 20px;
+                    @include fs-data(6); 
+                    text-align:center;
+                    background-color:#EFEFEF;
+                    border-top: 6px solid #CCCCCC;
+                  } 
+
+                  .wwc16__trophyHolder{
+                  
+                    text-align:center;
+                    width:100%;
+                    max-width:1300px
+                  }
+
+                  .wwc16__final{
+                    position:relative;
+                    width:100%;
+                    max-width:252px;
+                    height: auto;
+                    margin: -12px auto 12px auto;
+                    padding : 12px 20px;
+                    @include fs-data(6); 
+                    text-align:center;
+                    background-color:#ffcc00;
+                    border-top: 6px solid #ff9b0b;
+                  } 
+
+                  .wwc16__match-date, .wwc16__match-detail{
+                    position:relative;
+                    width:100%;
+                    text-align:left;
+                    @include fs-data(1);
+                    color: $neutral-1
+
+                  }
+                  .wwc16__match-date{
+                  margin-bottom:6px;
+                  }
+                  .wwc16__match-detail{
+                  margin-top:6px;
+                  }
+
+
+
+                  .wwc16__marginsAuto{
+                      position: relative;
+                      margin: 0 auto;
+
+                  }
+
+                  .wwc16__blocksAuto{
+                      position: relative;
+                      display:inline-block;
+                      width: 100%;
+                      text-align: center;
+
+                  }
+
+
+      }
+
+

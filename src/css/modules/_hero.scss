@@ -1,0 +1,68 @@
+.wwc16__hero-container{
+
+ background:rgba($guardian-brand-light, 0.15);
+
+    .show-mobile{
+        display: block;
+        @include mq(mobileLandscape) {
+            display: none;
+        }
+      }
+
+
+    .show-non-mobile{
+      display: none;
+          @include mq(mobileLandscape) {
+               display:block;
+          }
+
+    }
+
+    .static-image-holder{
+      position:relative;
+      height: 138px;
+      width:100%;
+      background: url('assets/ani-288-h/bg-mobile.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+
+
+
+    .wwc16__hero-holder{
+
+
+       @include mq(tablet) {
+            max-width: 740px;
+        }
+
+        @include mq(desktop) {
+            max-width: 980px;
+        }
+
+        @include mq(1140px) {
+            max-width: 1140px;
+        }
+
+        @include mq(wide) {
+            max-width: 1300px;
+        }
+
+      margin: 0 auto;
+      position:relative;
+      height: 288px;
+      width:100%;
+      background-size:cover;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      overflow:hidden;
+    }
+
+    .wwc16__hero {
+      position:absolute;
+      top:0px;
+      width:100%;
+      height:288px;
+    }
+
+}
