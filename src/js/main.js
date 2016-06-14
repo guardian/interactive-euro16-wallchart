@@ -5,6 +5,7 @@ var dataCopy;
 var dataStadia;
 var dataISO = [{fifaisocode: 'ALB',fullcountryname: 'Albania' },{fifaisocode: 'AUT',fullcountryname: 'Austria' },{fifaisocode: 'BEL',fullcountryname: 'Belgium' },{fifaisocode: 'HRV',fullcountryname: 'Croatia' },{fifaisocode: 'CZE',fullcountryname: 'Czech Republic' },{fifaisocode: 'ENG',fullcountryname: 'England' },{fifaisocode: 'FRA',fullcountryname: 'France' },{fifaisocode: 'GER',fullcountryname: 'Germany' },{fifaisocode: 'HUN',fullcountryname: 'Hungary' },{fifaisocode: 'ISL',fullcountryname: 'Iceland' },{fifaisocode: 'ITA',fullcountryname: 'Italy' },{fifaisocode: 'NIR',fullcountryname: 'Northern Ireland' },{fifaisocode: 'POL',fullcountryname: 'Poland' },{fifaisocode: 'PRT',fullcountryname: 'Portugal' },{fifaisocode: 'IRL',fullcountryname: 'Republic of Ireland' },{fifaisocode: 'ROU',fullcountryname: 'Romania' },{fifaisocode: 'RUS',fullcountryname: 'Russia' },{fifaisocode: 'SVK',fullcountryname: 'Slovakia' },{fifaisocode: 'ESP',fullcountryname: 'Spain' },{fifaisocode: 'SWE',fullcountryname: 'Sweden' },{fifaisocode: 'CHE',fullcountryname: 'Switzerland' },{fifaisocode: 'TUR',fullcountryname: 'Turkey' },{fifaisocode: 'UKR',fullcountryname: 'Ukraine' },{fifaisocode: 'WLS',fullcountryname: 'Wales' },{fifaisocode: 'TBA',fullcountryname: 'TBA' }];
 var dataGroups = [];
+var dataGroupStandings;
 var groupLetters = ["A","B","C","D","E","F","G","H"]
 var data_gr_A; var data_gr_B; var data_gr_C; var data_gr_D; var data_gr_E; var data_gr_F; 
 
@@ -84,6 +85,8 @@ define([
     function modelData (resp){
             dataFixtures = resp.sheets.NewFixtures;
             dataCopy = resp.sheets.copyHolder;
+            dataGroupStandings = resp.sheets.Group_standings;
+            dataStadia = resp.sheets.stadia;
 
             // Block of code to log out ISO codes from spreadsheet
                 //dataISO = resp.sheets.country_iso;
@@ -93,16 +96,13 @@ define([
                 //     dataStr+= ("{fifaisocode: '"+item.fifaisocode+"',fullcountryname: '"+item.fullcountryname+"' }," );
                 // })
                 // console.log(dataStr);
-
-            dataStadia = resp.sheets.stadia;
-
             
-            data_gr_A = (resp.sheets.Group_A);
-            data_gr_B = (resp.sheets.Group_B);
-            data_gr_C = (resp.sheets.Group_C);
-            data_gr_D = (resp.sheets.Group_D);
-            data_gr_E = (resp.sheets.Group_E);
-            data_gr_F = (resp.sheets.Group_F);
+            data_gr_A = _.filter(dataGroupStandings, function(item){ return item.Group == "A"; });
+            data_gr_B = _.filter(dataGroupStandings, function(item){ return item.Group == "B"; });
+            data_gr_C = _.filter(dataGroupStandings, function(item){ return item.Group == "C"; });
+            data_gr_D = _.filter(dataGroupStandings, function(item){ return item.Group == "D"; });
+            data_gr_E = _.filter(dataGroupStandings, function(item){ return item.Group == "E"; });
+            data_gr_F = _.filter(dataGroupStandings, function(item){ return item.Group == "F"; });
             // 
             _.each(data_gr_A, function (item){
                item.shortCountry = get3LetterCode(item.Country);
@@ -508,7 +508,7 @@ define([
         //deactivate tz button
             //var tempStr = "<div class='fixtures-group visible-non-mobile' id='fixtureSet_"+k+"'><div class='sub-head-container-2'>Fixtures</div><div class='wwc__tz-button' id='timeSet_"+k+"'></div><div class='fixture-holder'>"
 
-            var tempStr = "<div class='fixtures-group visible-non-mobile' id='fixtureSet_"+k+"'><div class='sub-head-container-2'>Fixtures</div><div class='fixture-holder'>"
+            var tempStr = "<div class='fixtures-group' id='fixtureSet_"+k+"'><div class='sub-head-container-2'>Fixtures</div><div class='fixture-holder'>"
                 
                 var displayDate = groupArr[0].date;
 
@@ -536,8 +536,8 @@ define([
 
                     });
 
-
-            tempStr += "</div></div><div class='wwc__open-fixtures-button visible-mobile' id='fixturesButton_"+k+"'></div>"
+                tempStr += "</div><p class='visible-mobile'></p>";
+            // tempStr += "</div></div><div class='wwc__open-fixtures-button visible-mobile' id='fixturesButton_"+k+"'></div>"
             
             document.getElementById('table'+(k+1)).innerHTML = document.getElementById('table'+(k+1)).innerHTML + tempStr;
 
