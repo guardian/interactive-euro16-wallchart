@@ -80,8 +80,8 @@
                     float:left;
                     @include fs-data(2);
                     text-align:center;
-                    background-color: rgba($news-main-2, 0.5);
-                    border-top: 2px solid $news-main-2;
+                    background-color: rgba($custom-blue-1, 0.5);
+                    border-top: 2px solid $custom-blue-1;
 
 
                        @include mq(mobileLandscape) {

@@ -13,6 +13,9 @@ var trophySVG = '<svg width="60px" height="90px"><path fill-rule="evenodd" clip-
 
 var clockSVG = '<svg width="24px" height="24px"><path d="M39.832,42.138c0,1.656-0.312,3.211-0.938,4.664c-0.625,1.454-1.477,2.726-2.555,3.82 c-1.078,1.094-2.344,1.953-3.797,2.578s-3.008,0.938-4.664,0.938s-3.219-0.312-4.688-0.938s-2.742-1.484-3.82-2.578 c-1.078-1.094-1.93-2.367-2.555-3.82c-0.625-1.453-0.938-3.008-0.938-4.664s0.312-3.211,0.938-4.664 c0.625-1.454,1.477-2.727,2.555-3.82c1.078-1.094,2.352-1.953,3.82-2.579c1.469-0.625,3.031-0.937,4.688-0.937 s3.211,0.312,4.664,0.937c1.453,0.625,2.719,1.484,3.797,2.579c1.078,1.094,1.93,2.367,2.555,3.82 C39.52,38.927,39.832,40.482,39.832,42.138z M36.316,43.216v-1.594l-6.938-0.375l-0.703-8.907h-1.641L26.238,42.56l1.641,1.36  L36.316,43.216z"/></svg>'
 
+var headerImgStr = 'http://interactive.guim.co.uk/2015/12/2016-euros-wallchart/uploaded-assets/bg-cc.gif';
+
+
 var imageEndString = "500.jpg";
 
 var shortURL;
@@ -229,11 +232,11 @@ define([
         var dataObj = getDataObj("header area");
         var dataPicObj = getDataObj("header picture");
 
-        var htmlStr = "<h4 id='headStack2' style='color:#aad8f1'>"+dataObj.smallTitle+"</h4><h1 id='headStackTitle'>"+dataObj.titleCopy+"</h1><p id='headSupportCopy'>"+dataObj.mainCopy+"</p>";
+        var htmlStr = "<h4 id='headStack2' style='color:#0eb6ea'>"+dataObj.smallTitle+"</h4><h1 id='headStackTitle'>"+dataObj.titleCopy+"</h1><p id='headSupportCopy'>"+dataObj.mainCopy+"</p>";
 
         document.getElementById('headerArea').innerHTML = htmlStr;  
 
-        document.getElementById('heroPic').setAttribute('style','background: url('+dataObj.imagePath+') top center no-repeat; background-size:cover;')
+        document.getElementById('heroPic').setAttribute('style','background: url('+headerImgStr+') top center no-repeat; background-size:cover;')
 
         //document.getElementById('wwc__shareButtons').innerHTML = shareButtonsStr;                 
                         
@@ -335,9 +338,9 @@ define([
 
         _.each(dataStadia, function(item,i){
             var newAtom="<li><div class='wwc-stadia--image' style='background: url("+item.image+") top center no-repeat; background-size: cover;'></div>";
-            newAtom += "<div class='wwc-stadia--copy'><span style='color:#4bc6df'>"+item.number+"</span> | <span style='font-weight:600'>"+item.city+"</span></br>";
+            newAtom += "<div class='wwc-stadia--copy'><span style='color:#0eb6ea'>"+item.number+"</span> | <span style='font-weight:600'>"+item.city+"</span></br>";
             newAtom +="<span style='color:#999'>"+item.name+"</br>";
-            newAtom +="Capacity: </span><span style='color:#4bc6df'>"+item.capacity+"</br></span></div>";
+            newAtom +="Capacity: </span><span style='color:#0eb6ea'>"+item.capacity+"</br></span></div>";
             newAtom +="</li>";
             htmlStr+= newAtom;
         });

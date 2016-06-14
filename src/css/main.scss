@@ -28,6 +28,10 @@ $guardian-brand: map-get($pasteup-palette, 'guardian-brand');
 $guardian-brand-light: map-get($pasteup-palette, 'guardian-brand-light');
 $guardian-brand-dark: map-get($pasteup-palette, 'guardian-brand-dark');
 
+$custom-blue-1:#0eb6ea;
+
+$custom-blue-2:#8dcde1;
+
 @import 'modules/mq';
 @import 'modules/header';
 @import 'modules/hero';
@@ -156,8 +160,8 @@ figure.element {
 				.datagrid table {
 				    border-collapse: collapse;
 				    width:100%;
-				    tr:nth-child(even) {background: rgba($news-main-2,0.4)}
-					tr:nth-child(odd) {background: rgba($news-main-2,0.1)}
+				    tr:nth-child(even) {background: rgba($custom-blue-1,0.4)}
+					tr:nth-child(odd) {background: rgba($custom-blue-1,0.1)}
 				}
 
 				.datagrid {
@@ -175,7 +179,7 @@ figure.element {
 				}
 
 				.datagrid table thead th {
-				    background-color: rgba($news-main-2,0.8);
+				    background-color: rgba($custom-blue-1,0.8);
 				    color: $neutral-1;
 				    font-size: 15px;
 				    font-weight: bold;   
@@ -349,7 +353,7 @@ figure.element {
 					postion:relative;
 					width:100%;
 					@include fs-bodyHeading(2);
-					color:$news-main-2;
+					color:$custom-blue-1;
 					margin-bottom:6px;
 		}
 
